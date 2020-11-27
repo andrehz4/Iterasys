@@ -17,7 +17,7 @@ CRIAR LISTA DE LIVROS NO SITE TODO MICROSOFT
     [Template]                  Crie a lista Livros 
     [Tags]                      LISTADELIVROS1              PIPELISTADELIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista                                                                       
-    eng.andrehz@gmail.com       Ole498180@                  André Zimermann          Livros 
+    eng.andrehz@gmail.com.       Ole498180@                  André Zimermann          Livros 
 
 CRIAR LISTA DE LIVROS COM OS ITENS NO SITE TODO MICROSOFT
     [Template]                  Na lista Livros, crie os itens A Arte da Guerra, A Cauda Longa e A Torre Negra
