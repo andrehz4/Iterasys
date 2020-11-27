@@ -1,0 +1,13 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-requests
+robotframework-screencaplibrary
+robotframework-AppiumLibrary
+robotframework robotframework-faker 
+robotframework-requests==0.5.0 
+robotframework-seleniumlibrary 
+robotframework-ScreenCapLibrary 
+robotframework-AppiumLibrary 
+robotframework-databaselibrary 
+robotframework-datadriver
+#robotframework-sshlibrary==3.2.1 

@@ -1,0 +1,7 @@
+logs/
+tests/api/logs/
+tests/web/results/
+tests/mobile/log/
+tests/results/
+resources/app
+
