@@ -14,6 +14,8 @@ Test Teardown      Fechar app
 *** Test Cases ***
 LOGIN E BUSCA DE VEICULOS USADOS COM SUCESSO NO APLICATIVO ANDROID DO ICARROS 
      [Template]                       Faça uma consulta de veículos usados                                                                        
+     [Tags]                           BUSCAVEICULOUSADO1                       PIPEICARROS
+
      #CPF                             #SENHA           #Nome do veiculo usado  #Nome do veiculo          #Preço  
      provaiterasyshz@gmail.com        S#nha2020        ONIX                    Chevrolet Onix            40,876
 
