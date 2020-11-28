@@ -8,10 +8,12 @@ Resource    ../resources/mobile_hz.robot
 ###################### ICARROS - ITERASYS
 Dado que acesso e verifico que estou no app android do Icarros e logo com um ${usuario_existente} e insiro a sua ${senha_valida} 
     Log to console                           Abrir Aplcativo Icarros
+    Capture Page Screenshot
     Log to console                           Dado - OK
     Click Element                            ${ICONE_LOGIN}
     Wait Until Element Is Visible            ${ENTRAR_CADASTRAR}               ${timeout}    
     Click Element                            ${ENTRAR_CADASTRAR}    
+    Capture Page Screenshot
     Wait Until Element Is Visible            ${INFORMAR_EMAIL}                 ${timeout}              
     Input Text	                             ${INFORMAR_EMAIL}                 ${usuario_existente}
     Wait Until Element Is Visible            ${INFORMAR_SENHA}
@@ -19,6 +21,7 @@ Dado que acesso e verifico que estou no app android do Icarros e logo com um ${u
     Wait Until Element Is Visible            ${BUTTON_ENTRAR}                  ${timeout}
     Click Element                            ${BUTTON_ENTRAR}
     Log to console                           Login - OK
+    Capture Page Screenshot
 
 
 ###BUSCA PRODUTO
@@ -30,10 +33,12 @@ Qundo insiro um ${nome_veiculo_usado} na barra de busca da home
     Input Text                               ${TEXTO_BUSCA_VEICULO_TELA_CHEIA}  ${nome_veiculo_usado} 
     Click Element                            ${BUTTON_SEARCH_LARANJA}
     #Press Keycode                            66
-    Sleep    5
+    Log to console                           Busca - OK
+    Capture Page Screenshot
 
 
 Então o aplicativo exibe opções de ${nome_veiculo_usado} para compra é verificado se ele trouxe ${nome_correto} com o ${preco_desejado}.
+    Capture Page Screenshot
     Wait Until Element Is Visible            ${TEXTO_PRECO_DO_VEICULO}
     ${preco}=	                             Get Text	                                  ${TEXTO_PRECO_DO_VEICULO}
     Wait Until Element Is Visible            ${TEXTO_NOME_VEICULO_BUSCA}

@@ -1,77 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201126 13:47:05.180" rpa="false">
-<suite id="s1" name="Cadastro" source="C:\Gitlab_hz\andrehz\tests\api\cadastro.robot">
-<test id="s1-t1" name="CADASTRO COM SUCESSO">
-<kw name="Create Session" library="RequestsLibrary" type="setup">
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201127 21:42:11.696" rpa="false">
+<suite id="s1" name="LoginEBuscaPetz" source="C:\Iterasys_andrehz\tests\api\LoginEBuscaPetz.robot">
+<test id="s1-t1" name="LOGIN COM SUCESSO NO SITE PETZ">
+<kw name="Acessar e navegação no site da Petz logado" library="services">
+<arguments>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
-<arg>FastShop</arg>
-<arg>${base_url}</arg>
+<arg>Petz</arg>
+<arg>https://www.petz.com.br</arg>
 </arguments>
-<msg timestamp="20201126 13:47:05.784" level="INFO">Creating Session using : alias=FastShop, url=https://apiqa.fastshop.com.br, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20201126 13:47:05.784" endtime="20201126 13:47:05.784"></status>
-</kw>
-<kw name="Cadastro criar um usuario com sucesso" library="services">
-<arguments>
-<arg>201</arg>
-</arguments>
-<kw name="Cpf" library="FakerLibrary">
-<assign>
-<var>${CPF}</var>
-</assign>
-<msg timestamp="20201126 13:47:05.785" level="INFO">${CPF} = 742.813.965-19</msg>
-<status status="PASS" starttime="20201126 13:47:05.785" endtime="20201126 13:47:05.785"></status>
-</kw>
-<kw name="Name" library="FakerLibrary">
-<doc>:example 'John Doe'</doc>
-<assign>
-<var>${NOMEFAKE}</var>
-</assign>
-<msg timestamp="20201126 13:47:05.785" level="INFO">${NOMEFAKE} = Srta. Luiza Barros</msg>
-<status status="PASS" starttime="20201126 13:47:05.785" endtime="20201126 13:47:05.785"></status>
-</kw>
-<kw name="Phone Number" library="FakerLibrary">
-<assign>
-<var>${TELEFONEFAKE}</var>
-</assign>
-<msg timestamp="20201126 13:47:05.785" level="INFO">${TELEFONEFAKE} = +55 (051) 0446-6232</msg>
-<status status="PASS" starttime="20201126 13:47:05.785" endtime="20201126 13:47:05.785"></status>
-</kw>
-<kw name="Word" library="FakerLibrary">
-<doc>:returns: A random word, eg: 'lorem'</doc>
-<assign>
-<var>${PALAVRAFAKE}</var>
-</assign>
-<msg timestamp="20201126 13:47:05.786" level="INFO">${PALAVRAFAKE} = quod</msg>
-<status status="PASS" starttime="20201126 13:47:05.785" endtime="20201126 13:47:05.786"></status>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<doc>Generate a random password of the specified ``length``.</doc>
-<assign>
-<var>${PASSWORDFAKE}</var>
-</assign>
-<msg timestamp="20201126 13:47:05.786" level="INFO">${PASSWORDFAKE} = +TYOuIc#30</msg>
-<status status="PASS" starttime="20201126 13:47:05.786" endtime="20201126 13:47:05.786"></status>
+<msg timestamp="20201127 21:42:12.245" level="INFO">Creating Session using : alias=Petz, url=https://www.petz.com.br, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20201127 21:42:12.244" endtime="20201127 21:42:12.245"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
 <arguments>
-<arg>Connection=Connection</arg>
-<arg>User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36</arg>
-<arg>Content-Type=application/json</arg>
-<arg>Accept=application/json, text/plain, */*</arg>
-<arg>checkout-api-version=v1</arg>
-<arg>channel=webapp</arg>
+<arg>Upgrade-Insecure-Requests=1</arg>
+<arg>Origin=https://www.petz.com.br</arg>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36</arg>
+<arg>Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</arg>
 </arguments>
 <assign>
 <var>&amp;{headers}</var>
 </assign>
-<msg timestamp="20201126 13:47:05.787" level="INFO">&amp;{headers} = { Connection=Connection | User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 | Content-Type=application/json | Accept=applica...</msg>
-<status status="PASS" starttime="20201126 13:47:05.786" endtime="20201126 13:47:05.787"></status>
+<msg timestamp="20201127 21:42:12.245" level="INFO">&amp;{headers} = { Upgrade-Insecure-Requests=1 | Origin=https://www.petz.com.br | Content-Type=application/x-www-form-urlencoded | User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like G...</msg>
+<status status="PASS" starttime="20201127 21:42:12.245" endtime="20201127 21:42:12.245"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>action=Login&amp;logar=true&amp;login=provaiterasys%40gmail.com&amp;manter=on&amp;senha=S%23nha2020&amp;tipoUser=CLIENTE</arg>
+</arguments>
+<assign>
+<var>${payload}</var>
+</assign>
+<msg timestamp="20201127 21:42:12.246" level="INFO">${payload} = action=Login&amp;logar=true&amp;login=provaiterasys%40gmail.com&amp;manter=on&amp;senha=S%23nha2020&amp;tipoUser=CLIENTE</msg>
+<status status="PASS" starttime="20201127 21:42:12.245" endtime="20201127 21:42:12.246"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${payload}</arg>
+</arguments>
+<msg timestamp="20201127 21:42:12.246" level="INFO">action=Login&amp;logar=true&amp;login=provaiterasys%40gmail.com&amp;manter=on&amp;senha=S%23nha2020&amp;tipoUser=CLIENTE</msg>
+<status status="PASS" starttime="20201127 21:42:12.246" endtime="20201127 21:42:12.246"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Petz</arg>
+<arg>/indexLogado_Loja.html</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20201127 21:42:12.881" level="INFO">POST Request : url=https://www.petz.com.br/indexLogado_Loja.html 
+ path_url=/indexLogado_Loja.html 
+ headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1', 'Origin': 'https://www.petz.com.br', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100'} 
+ body=b'action=Login&amp;logar=true&amp;login=provaiterasys%40gmail.com&amp;manter=on&amp;senha=S%23nha2020&amp;tipoUser=CLIENTE' 
+ </msg>
+<msg timestamp="20201127 21:42:12.881" level="INFO">POST Response : url=https://www.petz.com.br/indexLogado_Loja.html 
+ status=200, reason= 
+ body=None 
+ </msg>
+<msg timestamp="20201127 21:42:12.881" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:979: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.petz.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20201127 21:42:12.883" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20201127 21:42:12.246" endtime="20201127 21:42:12.883"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${\n}</arg>
+</arguments>
+<status status="PASS" starttime="20201127 21:42:12.883" endtime="20201127 21:42:12.884"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Status: ${resp.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20201127 21:42:12.884" endtime="20201127 21:42:12.884"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>${resp.status_code_page}</arg>
+</arguments>
+<msg timestamp="20201127 21:42:12.885" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20201127 21:42:12.884" endtime="20201127 21:42:12.885"></status>
+</kw>
+<status status="PASS" starttime="20201127 21:42:12.244" endtime="20201127 21:42:12.885"></status>
+</kw>
+<status status="PASS" starttime="20201127 21:42:12.243" endtime="20201127 21:42:12.885" critical="yes"></status>
+</test>
+<test id="s1-t2" name="BUSCAR UM PRODUTO NO SITE PETZ">
+<kw name="Busca de produtos" library="services">
+<arguments>
+<arg>Coleira</arg>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Petz</arg>
+<arg>https://www.petz.com.br</arg>
+</arguments>
+<msg timestamp="20201127 21:42:12.887" level="INFO">Creating Session using : alias=Petz, url=https://www.petz.com.br, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20201127 21:42:12.887" endtime="20201127 21:42:12.888"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Upgrade-Insecure-Requests=1</arg>
+<arg>Origin=https://www.petz.com.br</arg>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36</arg>
+<arg>Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20201127 21:42:12.888" level="INFO">&amp;{headers} = { Upgrade-Insecure-Requests=1 | Origin=https://www.petz.com.br | Content-Type=application/x-www-form-urlencoded | User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like G...</msg>
+<status status="PASS" starttime="20201127 21:42:12.888" endtime="20201127 21:42:12.888"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${payload}</var>
+</assign>
+<msg timestamp="20201127 21:42:12.889" level="INFO">${payload} = </msg>
+<status status="PASS" starttime="20201127 21:42:12.888" endtime="20201127 21:42:12.889"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${payload}</arg>
+</arguments>
+<msg timestamp="20201127 21:42:12.889" level="INFO"></msg>
+<status status="PASS" starttime="20201127 21:42:12.889" endtime="20201127 21:42:12.889"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Petz</arg>
+<arg>/busca?q=${produto}</arg>
+<arg>data=${payload}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20201127 21:42:12.954" level="INFO">GET Request : url=https://www.petz.com.br/busca?q=Coleira 
+ path_url=/busca?q=Coleira 
+ headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1', 'Origin': 'https://www.petz.com.br', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=None 
+ </msg>
+<msg timestamp="20201127 21:42:12.954" level="INFO">GET Response : url=https://www.petz.com.br/busca?q=Coleira 
+ status=200, reason=OK 
+ body=&lt;html style="height:100%"&gt;&lt;head&gt;&lt;META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"&gt;&lt;meta name="format-detection" content="telephone=no"&gt;&lt;meta name="viewport" content="initial-scale=1.0"&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;&lt;/head&gt;&lt;body style="margin:0px;height:100%"&gt;&lt;iframe id="main-iframe" src="/_Incapsula_Resource?SWUDNSAI=30&amp;xinfo=12-99090413-0%200NNN%20RT%281606524132170%2026%29%20q%280%20-1%20-1%20-1%29%20r%280%20-1%29%20B12%284%2c316%2c0%29%20U18&amp;incident_id=1240000200298613562-530471367860552972&amp;edet=12&amp;cinfo=04000000&amp;rpinfo=0&amp;cts=3g7qEWoNz39pUZucpZKsTXKMo2chais6OvYv6TWx8HvoYKE1Hq1o5ijUscdL9g%2bE" frameborder=0 width="100%" height="100%" marginheight="0px" marginwidth="0px"&gt;Request unsuccessful. Incapsula incident ID: 1240000200298613562-530471367860552972&lt;/iframe&gt;&lt;/body&gt;&lt;/html&gt; 
+ </msg>
+<msg timestamp="20201127 21:42:12.954" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:979: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.petz.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20201127 21:42:12.954" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20201127 21:42:12.889" endtime="20201127 21:42:12.954"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Produto procurado:${produto}</arg>
+</arguments>
+<status status="PASS" starttime="20201127 21:42:12.955" endtime="20201127 21:42:12.955"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${\n}</arg>
+</arguments>
+<status status="PASS" starttime="20201127 21:42:12.955" endtime="20201127 21:42:12.956"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Status: ${resp.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20201127 21:42:12.956" endtime="20201127 21:42:12.956"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>${resp.status_code_page}</arg>
+</arguments>
+<msg timestamp="20201127 21:42:12.957" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20201127 21:42:12.956" endtime="20201127 21:42:12.957"></status>
+</kw>
+<status status="PASS" starttime="20201127 21:42:12.886" endtime="20201127 21:42:12.957"></status>
+</kw>
+<status status="PASS" starttime="20201127 21:42:12.886" endtime="20201127 21:42:12.957" critical="yes"></status>
+</test>
+<test id="s1-t3" name="ADICIONAR UM PRODUTO COM SUCESSO NO CARRINHO PETZ">
+<kw name="Adicionar um produto no carrinho PETZ" library="services">
+<arguments>
+<arg>200</arg>
+</arguments>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Petz</arg>
+<arg>https://api.segment.io</arg>
+</arguments>
+<msg timestamp="20201127 21:42:12.959" level="INFO">Creating Session using : alias=Petz, url=https://api.segment.io, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20201127 21:42:12.959" endtime="20201127 21:42:12.959"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Upgrade-Insecure-Requests=1</arg>
+<arg>Origin=https://www.petz.com.br</arg>
+<arg>Content-Type=application/x-www-form-urlencoded</arg>
+<arg>User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36</arg>
+<arg>Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20201127 21:42:12.960" level="INFO">&amp;{headers} = { Upgrade-Insecure-Requests=1 | Origin=https://www.petz.com.br | Content-Type=application/x-www-form-urlencoded | User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like G...</msg>
+<status status="PASS" starttime="20201127 21:42:12.960" endtime="20201127 21:42:12.960"></status>
 </kw>
 <kw name="Convert To Json" library="Helpers">
 <arguments>
-<arg>{"document":"${CPF[0:3]}${CPF[4:7]}${CPF[8:11]}${CPF[12:]}","name":"${NOMEFAKE}","birthday":"1985-06-03","gender":"Male","tradeName":"","companyName":"","ie":"","telephone":"(11) 987488195","cellphone":"(11) 987488195","email":"${PALAVRAFAKE}_hz@fastshopteste.com","password":"12345678","receiveEmailFast":true,"receiveSMSFast":true,"receiveEmailOthers":true,"cpf":"${CPF[0:3]}${CPF[4:7]}${CPF[8:11]}${CPF[12:]}","emailVerify":"${PALAVRAFAKE}_hz@fastshopteste.com","passwordVerify":"12345678","zipCode":"07110040","streetName":"R R MARIA DE CASTRO MESQUITA","number":"84","complement":"56","district":"JARDIM SAO PAULO","city":"GUARULHOS","state":"SP","housingType":"2","country":"Brasil"}</arg>
+<arg>{\"timestamp\":\"2020-11-28T00:27:41.326Z\",\"integrations\":{},\"context\":{\"page\":{\"path\":\"/comprarAgora_Loja.html\",\"referrer\":\"https://www.petz.com.br/produto/coleira-petz-jujuba-para-gatos-151827\",\"search\":\"\",\"title\":\"Carrinho | Petz\",\"url\":\"https://www.petz.com.br/comprarAgora_Loja.html\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36\",\"locale\":\"pt-BR\",\"library\":{\"name\":\"analytics.js\",\"version\":\"4.0.4\"}},\"properties\":{\"cart_id\":\"166568181\",\"product\":{\"product_id\":\"151827\",\"sku\":\"20031110000331\",\"category\":\"Coleiras\",\"name\":\"Coleira Petz Jujuba para Gatos\",\"brand\":\"Petz\",\"variant\":\"\",\"price\":29.99,\"quantity\":1,\"position\":0,\"value\":29.99,\"url\":\"https://petz.com.br/produto/coleira-petz-jujuba-para-gatos-151827\",\"image_url\":\"https://staticpetz.stoom.com.br/fotos/1572381297482.jpg\"}},\"event\":\"Product Added\",\"messageId\":\"ajs-39e67f6c5afcda83077729fca72bf909\",\"anonymousId\":\"f092b200-d792-4db0-8fe7-aeceaaaa57d0\",\"type\":\"track\",\"writeKey\":\"x7a5ftBXuhYuVkSO32T4PTWpZRv0EESp\",\"userId\":null,\"sentAt\":\"2020-11-28T00:27:41.329Z\",\"_metadata\":{\"bundled\":[\"Appboy\",\"Google Tag Manager\",\"Segment.io\"],\"unbundled\":[]}}</arg>
 </arguments>
 <assign>
 <var>${payload}</var>
@@ -85,59 +260,61 @@
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20201126 13:47:05.792" level="INFO">${result} = {'document': '74281396519', 'name': 'Srta. Luiza Barros', 'birthday': '1985-06-03', 'gender': 'Male', 'tradeName': '', 'companyName': '', 'ie': '', 'telephone': '(11) 987488195', 'cellphone': '(11) 98...</msg>
-<status status="PASS" starttime="20201126 13:47:05.789" endtime="20201126 13:47:05.792"></status>
+<msg timestamp="20201127 21:42:12.963" level="INFO">${result} = {'timestamp': '2020-11-28T00:27:41.326Z', 'integrations': {}, 'context': {'page': {'path': '/comprarAgora_Loja.html', 'referrer': 'https://www.petz.com.br/produto/coleira-petz-jujuba-para-gatos-151827...</msg>
+<status status="PASS" starttime="20201127 21:42:12.960" endtime="20201127 21:42:12.963"></status>
 </kw>
-<msg timestamp="20201126 13:47:05.793" level="INFO">${payload} = {'document': '74281396519', 'name': 'Srta. Luiza Barros', 'birthday': '1985-06-03', 'gender': 'Male', 'tradeName': '', 'companyName': '', 'ie': '', 'telephone': '(11) 987488195', 'cellphone': '(11) 98...</msg>
-<status status="PASS" starttime="20201126 13:47:05.787" endtime="20201126 13:47:05.793"></status>
+<msg timestamp="20201127 21:42:12.964" level="INFO">${payload} = {'timestamp': '2020-11-28T00:27:41.326Z', 'integrations': {}, 'context': {'page': {'path': '/comprarAgora_Loja.html', 'referrer': 'https://www.petz.com.br/produto/coleira-petz-jujuba-para-gatos-151827...</msg>
+<status status="PASS" starttime="20201127 21:42:12.960" endtime="20201127 21:42:12.964"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${payload}</arg>
 </arguments>
-<msg timestamp="20201126 13:47:05.793" level="INFO">{'document': '74281396519', 'name': 'Srta. Luiza Barros', 'birthday': '1985-06-03', 'gender': 'Male', 'tradeName': '', 'companyName': '', 'ie': '', 'telephone': '(11) 987488195', 'cellphone': '(11) 987488195', 'email': 'quod_hz@fastshopteste.com', 'password': '12345678', 'receiveEmailFast': True, 'receiveSMSFast': True, 'receiveEmailOthers': True, 'cpf': '74281396519', 'emailVerify': 'quod_hz@fastshopteste.com', 'passwordVerify': '12345678', 'zipCode': '07110040', 'streetName': 'R R MARIA DE CASTRO MESQUITA', 'number': '84', 'complement': '56', 'district': 'JARDIM SAO PAULO', 'city': 'GUARULHOS', 'state': 'SP', 'housingType': '2', 'country': 'Brasil'}</msg>
-<status status="PASS" starttime="20201126 13:47:05.793" endtime="20201126 13:47:05.793"></status>
+<msg timestamp="20201127 21:42:12.964" level="INFO">{'timestamp': '2020-11-28T00:27:41.326Z', 'integrations': {}, 'context': {'page': {'path': '/comprarAgora_Loja.html', 'referrer': 'https://www.petz.com.br/produto/coleira-petz-jujuba-para-gatos-151827', 'search': '', 'title': 'Carrinho | Petz', 'url': 'https://www.petz.com.br/comprarAgora_Loja.html'}, 'userAgent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 'locale': 'pt-BR', 'library': {'name': 'analytics.js', 'version': '4.0.4'}}, 'properties': {'cart_id': '166568181', 'product': {'product_id': '151827', 'sku': '20031110000331', 'category': 'Coleiras', 'name': 'Coleira Petz Jujuba para Gatos', 'brand': 'Petz', 'variant': '', 'price': 29.99, 'quantity': 1, 'position': 0, 'value': 29.99, 'url': 'https://petz.com.br/produto/coleira-petz-jujuba-para-gatos-151827', 'image_url': 'https://staticpetz.stoom.com.br/fotos/1572381297482.jpg'}}, 'event': 'Product Added', 'messageId': 'ajs-39e67f6c5afcda83077729fca72bf909', 'anonymousId': 'f092b200-d792-4db0-8fe7-aeceaaaa57d0', 'type': 'track', 'writeKey': 'x7a5ftBXuhYuVkSO32T4PTWpZRv0EESp', 'userId': None, 'sentAt': '2020-11-28T00:27:41.329Z', '_metadata': {'bundled': ['Appboy', 'Google Tag Manager', 'Segment.io'], 'unbundled': []}}</msg>
+<status status="PASS" starttime="20201127 21:42:12.964" endtime="20201127 21:42:12.964"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the
 given `alias`</doc>
 <arguments>
-<arg>FastShop</arg>
-<arg>/fastshop-qa/wcs/resources/v1/customer/create</arg>
+<arg>Petz</arg>
+<arg>/v1/t</arg>
 <arg>data=${payload}</arg>
 <arg>headers=${headers}</arg>
 </arguments>
 <assign>
 <var>${resp}</var>
 </assign>
-<msg timestamp="20201126 13:47:05.916" level="INFO">POST Request : url=https://apiqa.fastshop.com.br/fastshop-qa/wcs/resources/v1/customer/create 
- path_url=/fastshop-qa/wcs/resources/v1/customer/create 
- headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/plain, */*', 'Connection': 'Connection', 'Content-Type': 'application/json', 'checkout-api-version': 'v1', 'channel': 'webapp', 'Content-Length': '659'} 
- body={"document": "74281396519", "name": "Srta. Luiza Barros", "birthday": "1985-06-03", "gender": "Male", "tradeName": "", "companyName": "", "ie": "", "telephone": "(11) 987488195", "cellphone": "(11) 987488195", "email": "quod_hz@fastshopteste.com", "password": "12345678", "receiveEmailFast": true, "receiveSMSFast": true, "receiveEmailOthers": true, "cpf": "74281396519", "emailVerify": "quod_hz@fastshopteste.com", "passwordVerify": "12345678", "zipCode": "07110040", "streetName": "R R MARIA DE CASTRO MESQUITA", "number": "84", "complement": "56", "district": "JARDIM SAO PAULO", "city": "GUARULHOS", "state": "SP", "housingType": "2", "country": "Brasil"} 
+<msg timestamp="20201127 21:42:13.930" level="INFO">POST Request : url=https://api.segment.io/v1/t 
+ path_url=/v1/t 
+ headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1', 'Origin': 'https://www.petz.com.br', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '1602'} 
+ body=timestamp=2020-11-28T00%3A27%3A41.326Z&amp;integrations=%7B%7D&amp;context=%7B%27page%27%3A+%7B%27path%27%3A+%27%2FcomprarAgora_Loja.html%27%2C+%27referrer%27%3A+%27https%3A%2F%2Fwww.petz.com.br%2Fproduto%2Fcoleira-petz-jujuba-para-gatos-151827%27%2C+%27search%27%3A+%27%27%2C+%27title%27%3A+%27Carrinho+%7C+Petz%27%2C+%27url%27%3A+%27https%3A%2F%2Fwww.petz.com.br%2FcomprarAgora_Loja.html%27%7D%2C+%27userAgent%27%3A+%27Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F86.0.4240.198+Safari%2F537.36%27%2C+%27locale%27%3A+%27pt-BR%27%2C+%27library%27%3A+%7B%27name%27%3A+%27analytics.js%27%2C+%27version%27%3A+%274.0.4%27%7D%7D&amp;properties=%7B%27cart_id%27%3A+%27166568181%27%2C+%27product%27%3A+%7B%27product_id%27%3A+%27151827%27%2C+%27sku%27%3A+%2720031110000331%27%2C+%27category%27%3A+%27Coleiras%27%2C+%27name%27%3A+%27Coleira+Petz+Jujuba+para+Gatos%27%2C+%27brand%27%3A+%27Petz%27%2C+%27variant%27%3A+%27%27%2C+%27price%27%3A+29.99%2C+%27quantity%27%3A+1%2C+%27position%27%3A+0%2C+%27value%27%3A+29.99%2C+%27url%27%3A+%27https%3A%2F%2Fpetz.com.br%2Fproduto%2Fcoleira-petz-jujuba-para-gatos-151827%27%2C+%27image_url%27%3A+%27https%3A%2F%2Fstaticpetz.stoom.com.br%2Ffotos%2F1572381297482.jpg%27%7D%7D&amp;event=Product+Added&amp;messageId=ajs-39e67f6c5afcda83077729fca72bf909&amp;anonymousId=f092b200-d792-4db0-8fe7-aeceaaaa57d0&amp;type=track&amp;writeKey=x7a5ftBXuhYuVkSO32T4PTWpZRv0EESp&amp;userId=None&amp;sentAt=2020-11-28T00%3A27%3A41.329Z&amp;_metadata=%7B%27bundled%27%3A+%5B%27Appboy%27%2C+%27Google+Tag+Manager%27%2C+%27Segment.io%27%5D%2C+%27unbundled%27%3A+%5B%5D%7D 
  </msg>
-<msg timestamp="20201126 13:47:05.916" level="INFO">POST Response : url=https://apiqa.fastshop.com.br/fastshop-qa/wcs/resources/v1/customer/create 
- status=455, reason=Undefined 
- body={"errorCode":"455","errorMessage":"E-mail possui um cadastro em nosso site. Por favor, digite um outro E-mail."} 
+<msg timestamp="20201127 21:42:13.931" level="INFO">POST Response : url=https://api.segment.io/v1/t 
+ status=200, reason=OK 
+ body={
+  "success": true
+} 
  </msg>
-<msg timestamp="20201126 13:47:05.916" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:979: InsecureRequestWarning: Unverified HTTPS request is being made to host 'apiqa.fastshop.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20201127 21:42:13.931" level="INFO">c:\python38\lib\site-packages\urllib3\connectionpool.py:979: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.segment.io'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   warnings.warn(</msg>
-<msg timestamp="20201126 13:47:05.918" level="INFO">${resp} = &lt;Response [455]&gt;</msg>
-<status status="PASS" starttime="20201126 13:47:05.793" endtime="20201126 13:47:05.918"></status>
+<msg timestamp="20201127 21:42:13.931" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20201127 21:42:12.964" endtime="20201127 21:42:13.931"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>${resp.status_code}</arg>
+<arg>${\n}</arg>
 </arguments>
-<status status="PASS" starttime="20201126 13:47:05.918" endtime="20201126 13:47:05.918"></status>
+<status status="PASS" starttime="20201127 21:42:13.931" endtime="20201127 21:42:13.932"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>${payload}</arg>
+<arg>Status: ${resp.status_code}</arg>
 </arguments>
-<status status="PASS" starttime="20201126 13:47:05.919" endtime="20201126 13:47:05.920"></status>
+<status status="PASS" starttime="20201127 21:42:13.932" endtime="20201127 21:42:13.933"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -145,27 +322,26 @@ given `alias`</doc>
 <arg>${resp.status_code}</arg>
 <arg>${resp.status_code_page}</arg>
 </arguments>
-<msg timestamp="20201126 13:47:05.920" level="INFO">Argument types are:
+<msg timestamp="20201127 21:42:13.933" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<msg timestamp="20201126 13:47:05.920" level="FAIL">455 != 201</msg>
-<status status="FAIL" starttime="20201126 13:47:05.920" endtime="20201126 13:47:05.920"></status>
+<status status="PASS" starttime="20201127 21:42:13.933" endtime="20201127 21:42:13.933"></status>
 </kw>
-<status status="FAIL" starttime="20201126 13:47:05.784" endtime="20201126 13:47:05.921"></status>
+<status status="PASS" starttime="20201127 21:42:12.959" endtime="20201127 21:42:13.933"></status>
 </kw>
-<status status="FAIL" starttime="20201126 13:47:05.783" endtime="20201126 13:47:05.921" critical="yes">455 != 201</status>
+<status status="PASS" starttime="20201127 21:42:12.958" endtime="20201127 21:42:13.934" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20201126 13:47:05.182" endtime="20201126 13:47:05.923"></status>
+<status status="PASS" starttime="20201127 21:42:11.698" endtime="20201127 21:42:13.935"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Cadastro">Cadastro</stat>
+<stat pass="3" fail="0" id="s1" name="LoginEBuscaPetz">LoginEBuscaPetz</stat>
 </suite>
 </statistics>
 <errors>

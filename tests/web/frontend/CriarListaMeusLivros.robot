@@ -18,25 +18,27 @@ CRIAR LISTA MEUS LIVROS NO SITE TODO MICROSOFT
     [Template]                  Crie a lista Meus Livros 
     [Tags]                      MEUSLIVROS1                 PIPELISTADEMEUSLIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista                                                                       
-    eng.andrehz@gmail.com       S#nha2020                   André Zimermann          Meus Livros 
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys           Meus Livros 
 
 CRIAR LISTA MEUS LIVROS COM 10 ITENS DE UMA FONTE EXTERNA NO SITE TODO MICROSOFT
     [Template]                  Na lista Meus Livros, a partir de uma massa de teste em formato csv, json ou xml, crie 10 itens com nomes de livros a sua escolha
     [Tags]                      MEUSLIVROS2                 PIPELISTADEMEUSLIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista            
-    eng.andrehz@gmail.com       S#nha2020                   André Zimermann          Meus Livros                  
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys           Meus Livros                  
 
 CRIAR LISTA MEUS LIVROS COM 10 ITENS, FAVORITAR 3 E MARCAR 2 COMO LEITURA CONCLUIDA NO SITE TODO MICROSOFT
     [Template]                  Na lista Meus Livros, marque 3 itens (livros) como importantes e outros 2 como concluídos
     [Tags]                      MEUSLIVROS3                 PIPELISTADEMEUSLIVROS
-    #E-mail                     #Senha                      #Nome                    #Nome Da Lista            #FAVORITOS                        #CONCLUIDOS                                                                             
-    eng.andrehz@gmail.com       S#nha2020                   André Zimermann          Meus Livros               QUATRO    SEIS     OITO           NOVE    DEZ   
+    #E-mail                     #Senha                      #Nome                    #Nome Da Lista           #FAVORITOS                        #CONCLUIDOS                                                                             
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys           Meus Livros               QUATRO    SEIS     OITO           NOVE    DEZ   
 
 VALIDAR LISTA DE LIVROS, ITENS E VERICAR STATUS FAVORITO NO SITE TODO MICROSOFT
     [Template]                  Valide se a lista Meus Livros existe, seu nome, itens e se os 3 itens (livros) estão como importantes e os outros 2 estão como concluídos
     [Tags]                      MEUSLIVROS4                 PIPELISTADEMEUSLIVROS
-    #E-mail                     #Senha                      #Nome                    #Nome Da Lista            #FAVORITOS                        #CONCLUIDOS                                                                             
-    eng.andrehz@gmail.com       S#nha2020                  André Zimermann          Meus Livros               QUATRO    SEIS     OITO           NOVE    DEZ 
+    #E-mail                     #Senha                      #Nome                    #Nome Da Lista           #FAVORITOS                        #CONCLUIDOS                                                                             
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys          Meus Livros               QUATRO    SEIS     OITO           NOVE    DEZ 
+
+
 
 
 

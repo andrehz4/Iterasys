@@ -17,25 +17,25 @@ CRIAR LISTA DE LIVROS NO SITE TODO MICROSOFT
     [Template]                  Crie a lista Livros 
     [Tags]                      LISTADELIVROS1              PIPELISTADELIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista                                                                       
-    eng.andrehz@gmail.com.       Ole498180@                  André Zimermann          Livros 
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys           Livros 
 
 CRIAR LISTA DE LIVROS COM OS ITENS NO SITE TODO MICROSOFT
     [Template]                  Na lista Livros, crie os itens A Arte da Guerra, A Cauda Longa e A Torre Negra
     [Tags]                      LISTADELIVROS2              PIPELISTADELIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista            #Nome Do Item 1            #ome Do Item 2            #ome Do Item 3                                                                             
-    eng.andrehz@gmail.com       Ole498180@                  André Zimermann          Livros                    A Arte da Guerra           A Cauda Longa             A Torre Negra   
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys          Livros                    A Arte da Guerra           A Cauda Longa             A Torre Negra   
 
 CRIAR LISTA DE LIVROS, ITENS E MARCAR COMO FAVORITO NO SITE TODO MICROSOFT
     [Template]                  Na lista Livros, marque o item A Torre Negra como importante
     [Tags]                      LISTADELIVROS3              PIPELISTADELIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista            #Nome Do Item 1            #ome Do Item 2            #ome Do Item 3                                                                             
-    eng.andrehz@gmail.com       Ole498180@                  André Zimermann          Livros                    A Arte da Guerra           A Cauda Longa             A Torre Negra   
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys          Livros                    A Arte da Guerra           A Cauda Longa             A Torre Negra   
 
 VALIDAR LISTA DE LIVROS, ITENS E VERICAR STATUS FAVORITO NO SITE TODO MICROSOFT
     [Template]                  Valide se a lista Livros existe, seu nome, itens e se A Torre Negra está como importante
     [Tags]                      LISTADELIVROS4              PIPELISTADELIVROS
     #E-mail                     #Senha                      #Nome                    #Nome Da Lista            #Nome Do Item 1            #ome Do Item 2            #ome Do Item 3                                                                             
-    eng.andrehz@gmail.com       Ole498180@                  André Zimermann          Livros                    A Arte da Guerra           A Cauda Longa             A Torre Negra   
+    provaiterasys@gmail.com     S#nha2020                   Andre Iterasys          Livros                    A Arte da Guerra           A Cauda Longa             A Torre Negra   
 
 
 *** Keywords ***
